@@ -40,7 +40,7 @@ scons install
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=Bombono DVD
-Comment=Fun game to learn math
+Comment=Easy to use DVD authoring tool
 Exec=%{_bindir}/%{name}
 Icon=%{name}
 Terminal=false
