@@ -1,12 +1,11 @@
 Name:		bombono-dvd
-Version:	0.5.2
+Version:	0.5.10
 Release:	%mkrel 1
 Summary:	DVD authoring program with nice and clean GUI
 License:	GPLv2
 Group:		Video
 URL:		http://www.bombono.org
 Source0:	http://prdownloads.sourceforge.net/bombono/%{name}-%{version}.tar.bz2
-Patch0:		bombono-dvd-0.5.2-twolame-instead-of-toolame.patch
 BuildRequires:	scons 
 BuildRequires:	libdvdread-devel 
 BuildRequires:	gtkmm2.4-devel
@@ -27,7 +26,6 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %prep
 %setup -q	
-%patch0 -p1
 
 %build
 scons  CFLAGS='-Wno-extra' PREFIX=%{_prefix} DESTDIR=%{buildroot}
@@ -36,6 +34,7 @@ scons  CFLAGS='-Wno-extra' PREFIX=%{_prefix} DESTDIR=%{buildroot}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_datadir}/applications
 scons install
+%find_lang %name
 
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
@@ -45,16 +44,16 @@ Exec=%{_bindir}/%{name}
 Icon=%{name}
 Terminal=false
 Type=Application
-Categories=Video
+Categories=Video;
 EOF
 
 %clean
 rm -rf %{buildroot}
 
-%files
+%files -f %{name}.lang
 %defattr(-,root,root)
 %{_bindir}/*
 %{_datadir}/bombono
-%{_datadir}/applications/bombono-dvd.desktop
-%{_datadir}/pixmaps/bombono-dvd.png
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/pixmaps/%{name}.png
 %{_datadir}/applications/mandriva-%{name}.desktop 
