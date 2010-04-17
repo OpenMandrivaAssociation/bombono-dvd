@@ -1,5 +1,5 @@
 Name:		bombono-dvd
-Version:	0.5.10
+Version:	0.6.0
 Release:	%mkrel 1
 Summary:	DVD authoring program with nice and clean GUI
 License:	GPLv2
