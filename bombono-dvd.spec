@@ -1,5 +1,5 @@
 Name:		bombono-dvd
-Version:	0.6.0
+Version:	0.8.1
 Release:	%mkrel 1
 Summary:	DVD authoring program with nice and clean GUI
 License:	GPLv2
@@ -11,7 +11,7 @@ BuildRequires:	libdvdread-devel
 BuildRequires:	gtkmm2.4-devel
 BuildRequires:	libxml++2.6-devel
 BuildRequires:	libmjpegtools-devel 
-BuildRequires:	graphicsmagick-devel
+BuildRequires:	ffmpeg-devel
 Requires:	dvdauthor mjpegtools dvd+rw-tools twolame
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
