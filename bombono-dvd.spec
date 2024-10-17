@@ -4,7 +4,7 @@ Release:	%mkrel 1
 Summary:	DVD authoring program with nice and clean GUI
 License:	GPLv2
 Group:		Video
-URL:		http://www.bombono.org
+URL:		https://www.bombono.org
 Source0:	http://prdownloads.sourceforge.net/bombono/%{name}-%{version}.tar.bz2
 BuildRequires:	scons 
 BuildRequires:	libdvdread-devel 
